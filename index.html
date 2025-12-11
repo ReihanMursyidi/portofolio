@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya | Junior AI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PORT<span>FOLIO.</span></div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#about" onclick="toggleMenu()">About</a>
+            <a href="#projects" onclick="toggleMenu()">Projects</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
+        </div>
+        
+    </nav>
+
+    <section class="hero" id="about">
+    
+        <div class="hero-text">
+            <h2>👋 Halo, Saya <span style="color: #e0cbcb;">Reihan Mursyidi</span></h2>
+            <h1 id="typing-text"></h1> 
+            <p>
+                Fresh Graduate yang memiliki passion di bidang Backend Development dan Artificial Intelligence. 
+                Spesialis dalam membangun sistem cerdas menggunakan Python, FastAPI, dan LLM.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">Lihat Project</a>
+                <a href="https://github.com/ReihanMursyidi" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+
+        <div class="photo-profile">
+            <img src="ReihanMursyidi square.png" alt="Foto Profil Reihan Mursyidi">
+        </div>
+
+    </section>
+
+    <div class="tech-stack">
+        <div class="tech-track">
+            <div class="tech-item"><i class="fab fa-python"></i> Python</div>
+            <div class="tech-item"><i class="fas fa-database"></i> SQL</div>
+            <div class="tech-item"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="tech-item"><i class="fas fa-brain"></i> Gemini AI</div>
+            <div class="tech-item"><i class="fas fa-server"></i> FastAPI</div>
+            <div class="tech-item"><i class="fas fa-search"></i> FAISS (RAG)</div>
+            <div class="tech-item"><i class="fab fa-php"></i> PHP</div>
+            <div class="tech-item"><i class="fab fa-html5"></i> HTML</div>
+            <div class="tech-item"><i class="fas fa-database"></i> MongoDB</div>
+            <!--  -->
+            <div class="tech-item"><i class="fab fa-python"></i> Python</div>
+            <div class="tech-item"><i class="fas fa-database"></i> SQL</div>
+            <div class="tech-item"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="tech-item"><i class="fas fa-brain"></i> Gemini AI</div>
+            <div class="tech-item"><i class="fas fa-server"></i> FastAPI</div>
+            <div class="tech-item"><i class="fas fa-search"></i> FAISS (RAG)</div>
+            <div class="tech-item"><i class="fab fa-php"></i> PHP</div>
+            <div class="tech-item"><i class="fab fa-html5"></i> HTML</div>
+            <div class="tech-item"><i class="fas fa-database"></i> MongoDB</div>
+        </div>
+    </div>
+
+    <section class="section" id="projects" style="background: radial-gradient(circle at bottom, #651010 0%, transparent 70%);">
+        <div class="section-title"><span>Featured Projects</span></div>
+        
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <div class="card-img">
+                    <i class="fas fa-robot fa-3x"></i> 
+                </div>
+                <div class="card-content">
+                    <div class="card-title">AI Customer Service <span>🚀</span></div>
+                    <p class="card-desc">
+                        Chatbot cerdas berbasis RAG (Retrieval-Augmented Generation) untuk Akademi Crypto. 
+                        Dibangun dengan FastAPI, LangChain, dan Gemini AI. Mampu menjawab pertanyaan dari dokumen bisnis secara real-time.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">FAISS</span>
+                        <span class="tag">Gemini</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-img">
+                    <i class="fas fa-chart-line fa-3x"></i>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Crypto Dashboard</div>
+                    <p class="card-desc">
+                        Website pemantau harga aset kripto menggunakan CoinGecko API. 
+                        Menampilkan grafik harga real-time dan analisis tren sederhana.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">API Integration</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <h2>Tertarik bekerja sama?</h2>
+        <p style="color: #aaa; margin-top: 10px;">Saya terbuka untuk kesempatan kerja Full-time atau Freelance.</p>
+        
+        <div class="socials">
+            <a href="mailto:mursyidireihan@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/reihan-mursyidi-643b0b244" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/ReihanMursyidi" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/6287765926235" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </section>
+    <!-- CHATBOT PART START -->
+    <button class="chat-btn-float" onclick="toggleChat()" title="Chat dengan AI Saya">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <span>🤖 Reihan AI (Digital Twin)</span>
+            <span style="cursor:pointer;" onclick="toggleChat()">✖</span>
+        </div>
+        
+        <div class="chat-body" id="chatBody">
+            <div class="msg msg-bot">
+                Halo! 👋 Saya adalah versi AI dari Reihan.<br><br>
+                Silakan tanya apa saja tentang pengalaman, skill, atau proyek yang pernah saya kerjakan!
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Tanya sesuatu..." autocomplete="off">
+            <button type="button" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <!-- CHATBOT PART END -->
+    <footer>
+        <p>&copy; 2025 Reihan Mursyidi. Built with code & coffee.</p>
+    </footer>
+
+    <script>
+        // Efek Mengetik pada Hero Section
+        const textElement = document.getElementById('typing-text');
+        const texts = ["Junior Backend Developer.", "AI Enthusiast.", "Problem Solver."];
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+
+        (function type() {
+            if (count === texts.length) {
+                count = 0;
+            }
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+
+            textElement.textContent = letter;
+            if (letter.length === currentText.length) {
+                setTimeout(() => {
+                    index = 0;
+                    count++;
+                }, 2000); // Tunggu 2 detik sebelum ganti kata
+            }
+            setTimeout(type, 100);
+        })();
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Matikan lompatan kasar bawaan browser
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Hitung posisi elemen dikurangi tinggi navbar (100px)
+                    const headerOffset = 100;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth" // Kunci ajaibnya di sini
+                    });
+                }
+            });
+        });
+
+        // --- FUNGSI TOGGLE MENU MOBILE ---
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+            
+            // Opsional: Ganti ikon baris jadi silang (X)
+            const icon = document.querySelector('.hamburger i');
+            if (nav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    </script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

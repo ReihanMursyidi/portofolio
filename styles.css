@@ -1,0 +1,430 @@
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-color: #050505;
+            --card-bg: #111;
+            --primary: #fc2727; 
+            --primary-hover: #eb4949;
+            --text-main: #ffffff;
+            --text-sec: #a1a1aa;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        html, body {
+            scroll-behavior: smooth !important;
+            scroll-padding-top: 100px; /* Jarak aman dari navbar */
+            width: 100%;
+            height: auto; /* Pastikan height tidak dikunci */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%; top: 0;
+            background: none;
+            backdrop-filter: blur(3px);
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-sec);
+            text-decoration: none; 
+            margin-left: 30px;
+            font-weight: 500; 
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .btn-contact {
+            padding: 8px 20px; 
+            background: var(--primary); 
+            color: white; 
+            border-radius: 5px; 
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-contact:hover {
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 120px 10% 50px;
+            gap: 50px;
+            background: radial-gradient(circle at top left, #4d0b0b 0%, transparent 30%);
+        }
+        .hero-text {
+            flex: 1; 
+            max-width: 600px; 
+        }
+        .hero h2 { 
+            color: var(--primary);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 10px;
+            font-family:'Inter', sans-serif;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+        }
+        .hero p { 
+            max-width: 95%;
+            color: var(--text-sec); 
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-bottom: 30px; 
+        }
+        
+        .cta-buttons { display: flex; gap: 15px;}
+
+        .btn {
+            padding: 12px 30px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .btn-primary { background: var(--primary); color: white; border: 1px solid var(--primary); }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-outline { background: transparent; color: white; border: 1px solid #333; }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+        .photo-profile {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .photo-profile img {
+            width: clamp(250px, 30vw, 350px); /* Ukuran foto responsif */
+            height: clamp(250px, 30vw, 350px);
+            object-fit: cover; /* Agar gambar tidak gepeng */
+            border-radius: 50%; /* Membuat foto jadi BULAT */
+            
+            box-shadow: 0 0 30px rgba(247, 85, 85, 0.4); 
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* --- TECH STACK (Marquee) --- */
+        .tech-stack {
+            padding: 30px 0; 
+            border-top: 1px solid #222; 
+            border-bottom: 1px solid #222;
+            background: #070707;
+            overflow: hidden; 
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .tech-track { 
+            display: flex; 
+            gap: 50px; 
+            animation: scroll 20s linear infinite; 
+            width: max-content; 
+        }
+
+        .tech-item { 
+            font-size: 1.5rem; 
+            color: #555555; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            font-weight: 600; 
+        }
+        .tech-item i { color: var(--primary); }
+        
+        @keyframes scroll { 
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(-50%); } 
+        }
+
+        /* --- PROJECTS SECTION --- */
+        .section { padding: 100px 10%; }
+        .section-title { 
+            font-size: clamp(2rem, 4vw, 2.5rem); 
+            margin-bottom: 50px; 
+            text-align: center; 
+            font-weight: 600;
+        }
+        .section-title span { border-bottom: 4px solid var(--primary); }
+
+        .project-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        
+        .project-card {
+            background: var(--card-bg); 
+            border: 1px solid #222; border-radius: 15px; overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .project-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        
+        .card-img { 
+            height: 200px; 
+            background: #1a1a1a;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #555; 
+        }
+
+        .card-content { padding: 25px; }
+
+        .card-title { 
+            font-size: 1.5rem; 
+            margin-bottom: 10px; 
+            display: flex; 
+            justify-content: space-between;
+        }
+
+        .card-desc { 
+            color: var(--text-sec); 
+            font-size: 0.95rem; 
+            margin-bottom: 20px; 
+            min-height: 60px;
+        }
+        
+        .tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tag { font-size: 0.75rem; padding: 4px 10px; background: #222; border-radius: 20px; color: var(--primary); border: 1px solid #333; }
+        
+        .card-links { display: flex; gap: 15px; }
+        .card-links a { color: white; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; }
+        .card-links a:hover { color: var(--primary); }
+
+        /* --- CONTACT SECTION --- */
+        .contact { text-align: center; padding: 100px 20px; background: #080808; }
+        .socials { display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
+        .socials a { color: var(--text-sec); font-size: 2rem; transition: 0.3s; }
+        .socials a:hover { color: var(--primary); transform: scale(1.1); }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 30px; border-top: 1px solid #222; color: #555; font-size: 0.9rem; }
+
+        /* --- CHATBOT WIDGET STYLE --- */
+        
+        /* 1. Tombol Melayang */
+        .chat-btn-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 4px 4px 15px #a0292966;
+            cursor: pointer;
+            z-index: 9999;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .chat-btn-float:hover { 
+            transform: scale(1.1); 
+            background: var(--primary-hover); 
+            box-shadow: none;
+            transition: transform 0.3s;
+        }
+
+        /* 2. Jendela Chat */
+        .chat-window {
+            display: none; 
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            height: 500px;
+            background: #121212;
+            border: 1px solid #333;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            z-index: 10000;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: var(--font-main);
+        }
+
+        /* Header Chat */
+        .chat-header {
+            background: var(--primary);
+            padding: 15px;
+            color: white;
+            display: flex; justify-content: space-between; align-items: center;
+            font-weight: 600;
+        }
+
+        /* Isi Chat */
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex; flex-direction: column; gap: 10px;
+            background: #0f0f0f;
+        }
+
+        /* Input Area */
+        .chat-input-area {
+            padding: 15px; background: #1a1a1a; border-top: 1px solid #333; display: flex; gap: 10px;
+        }
+        .chat-input-area input {
+            flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #333;
+            background: #222; color: white; outline: none;
+        }
+        .chat-input-area button {
+            background: var(--primary); border: none; color: white; width: 40px; height: 40px;
+            border-radius: 5px; cursor: pointer;
+        }
+
+        /* Bubble Chat */
+        .msg { max-width: 80%; padding: 10px 15px; border-radius: 10px; font-size: 0.9rem; line-height: 1.5; }
+        .msg-bot { background: #222; color: #eee; align-self: flex-start; border-bottom-left-radius: 2px; }
+        .msg-user { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+
+        /* Markdown Styles di dalam Chat */
+        .msg-bot strong { color: var(--primary); }
+        .msg-bot ul { padding-left: 20px; margin: 5px 0; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            
+            /* 1. NAVBAR MOBILE */
+            nav { 
+                padding: 15px 20px;
+                justify-content: space-between; /* Logo Kiri, Burger Kanan */
+                align-items: center;
+                backdrop-filter: blur(10px);
+                position: fixed; /* Tetap menempel saat scroll */
+                width: 100%;
+                gap: 0; /* Reset gap lama */
+            } 
+
+            .logo { 
+                width: auto; 
+                text-align: left; 
+                margin: 0; 
+                z-index: 1001; /* Pastikan logo di atas menu */
+            }
+
+            /* 2. TOMBOL HAMBURGER */
+            .hamburger {
+                display: block; 
+                z-index: 1001; /* Pastikan tombol di atas menu */
+            }
+
+            /* 3. MENU LINKS (DROPDOWN) */
+            .nav-links { 
+                position: absolute; /* Melayang di bawah navbar */
+                top: 100%; 
+                left: 0;
+                width: 100%;
+                border-bottom: 1px solid #222;
+                background-color: var(--bg-color);
+                display: none; /* Tersembunyi default */
+                flex-direction: column;
+                align-items: center; /* Teks rata tengah */
+                gap: 25px;
+                padding: 30px 0;
+                margin: 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            }
+
+            /* Class Active (Dipanggil JS saat tombol diklik) */
+            .nav-links.active {
+                display: flex;
+                animation: slideDown 0.3s ease forwards;
+                
+            }
+
+            .nav-links a {
+                margin: 0; /* Reset margin desktop */
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: center;
+                display: block;
+                padding: 10px 0;
+            }
+
+            /* Animasi Menu Turun */
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* 4. HERO SECTION */
+            .hero {
+                flex-direction: column-reverse; /* Foto Atas, Teks Bawah */
+                text-align: center;
+                padding-top: 130px; /* Jarak aman dari Navbar Mobile */
+                justify-content: center;
+                gap: 30px;
+            }
+            
+            .hero h1 { font-size: 2.5rem; }
+            .hero-text { margin: 0 auto; width: 100%; }
+            .hero p { margin: 0 auto 30px; }
+            .cta-buttons { justify-content: center; }
+
+            /* 5. FOTO PROFIL */
+            .photo-profile img {
+                width: 220px; /* Sedikit lebih kecil agar pas di HP */
+                height: 220px;
+                margin-bottom: 10px;
+            }
+
+            /* 6. CHATBOT RESPONSIVE */
+            .chat-window {
+                right: 0; left: 0; bottom: 0; /* Full width di bawah */
+                width: 100%;
+                height: 70vh;
+                border-radius: 20px 20px 0 0;
+                border: none; border-top: 1px solid #333;
+            }
+            .chat-btn-float { bottom: 20px; right: 20px; }
+        }
