@@ -5,7 +5,7 @@ if (!sessionId) {
     localStorage.setItem('portfolio_chat_id', sessionId);
 }
 
-const API_URL = "http://127.0.0.1:8000"; // Ganti URL ini nanti jika pakai Ngrok
+const API_URL = "https://reihanmursyidi-portofolio-chatbot.hf.space"; // Ganti URL ini nanti jika pakai Ngrok
 
 // 2. DETEKSI ENTER (Tanpa Refresh)
 document.getElementById("userInput").addEventListener("keydown", function(event) {
@@ -88,4 +88,5 @@ async function sendMessage() {
         document.getElementById(loadId).innerHTML = "⚠️ Maaf, Reihan AI sedang offline (Server Error).";
     }
     chatBody.scrollTop = chatBody.scrollHeight;
+
 }
