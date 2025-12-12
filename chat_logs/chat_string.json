@@ -1,0 +1,10 @@
+[
+    {
+        "role": "user",
+        "message": "Halo"
+    },
+    {
+        "role": "bot",
+        "message": "Halo! Saya senang bertemu denganmu. Reihan Mursyidi di sini."
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "role": "user",
+        "message": "halo"
+    },
+    {
+        "role": "bot",
+        "message": "Halo! Saya senang bertemu dengan Anda. Saya Reihan Mursyidi, seorang Junior AI Engineer dan Backend Developer yang memiliki hasrat tinggi dalam pengembangan teknologi cerdas. Saya fresh graduate dari Universitas Pamulang tahun 2025 dan saat ini tinggal di Serua, Bojongsari, Depok. Saya lahir di Jakarta pada tanggal 31 Mei 2002."
+    },
+    {
+        "role": "user",
+        "message": "Halo"
+    },
+    {
+        "role": "bot",
+        "message": "Halo! Saya senang bertemu dengan Anda. Saya Reihan Mursyidi, Junior AI Engineer dan Backend Developer yang memiliki hasrat tinggi dalam pengembangan teknologi cerdas. Saya baru saja lulus dari Universitas Pamulang tahun 2025 dan saat ini aktif di bidang pengembangan teknologi. Apa yang dapat saya bantu?"
+    },
+    {
+        "role": "user",
+        "message": "halo"
+    },
+    {
+        "role": "bot",
+        "message": "Halo! Saya senang bertemu dengan Anda. Saya Reihan Mursyidi, Junior AI Engineer dan Backend Developer yang memiliki hasrat tinggi dalam pengembangan teknologi cerdas. Saya fresh graduate dari Universitas Pamulang tahun 2025 dan berdomisili di Serua, Bojongsari, Depok. Bagaimana saya bisa membantu Anda hari ini?"
+    },
+    {
+        "role": "user",
+        "message": "halo"
+    },
+    {
+        "role": "bot",
+        "message": "Halo! \ud83d\udc4b Ada yang bisa saya bantu?"
+    },
+    {
+        "role": "user",
+        "message": "bagaimana cara menghubungi anda?"
+    },
+    {
+        "role": "bot",
+        "message": "Halo! \ud83d\ude4b\u200d\u2642\ufe0f Kamu bisa hubungi saya melalui email reihanmursyidi21@gmail.com atau WhatsApp 085867104622. Semoga bisa berbicara lebih lanjut!"
+    },
+    {
+        "role": "user",
+        "message": "apa saja keahlian anda?"
+    },
+    {
+        "role": "bot",
+        "message": "Halo! \ud83d\udc4b Saya sangat senang menjawab pertanyaan kamu. \n\nSaya adalah Junior AI Engineer, Programmer, dan Backend Developer dengan fokus utama pada pengembangan sisi belakang (Backend Development) dan pengembangan Chatbot (Chatbot Development). Saya juga memiliki kemampuan analisis data dasar dan dokumentasi menggunakan Microsoft Excel dan Word.\n\nBeberapa keahlian saya antara lain:\n\n- Bahasa Pemrograman: Python (Sangat Mahir), PHP, JavaScript, dan HTML.\n- Framework: FastAPI untuk API yang cepat dan efisien, serta Streamlit untuk pembuatan antarmuka aplikasi data.\n- Database (DBMS): SQL dan MongoDB.\n- Pengembangan Chatbot: Saya telah berhasil mengembangkan beberapa proyek chatbot, seperti layanan pelanggan (Customer Service) dan sistem informasi akademik yang terintegrasi dengan chatbot Telegram.\n\nSaya siap membantu dan menerima proyek baru! \ud83d\udcbb"
+    },
+    {
+        "role": "user",
+        "message": "dimana kamu tinggal?"
+    },
+    {
+        "role": "bot",
+        "message": "Halo! \ud83d\udc4b Saya tinggal di Serua, Bojongsari, Depok."
+    },
+    {
+        "role": "user",
+        "message": "kamu lulusan mana?"
+    },
+    {
+        "role": "bot",
+        "message": "Saya lulusan Universitas Pamulang tahun 2025."
+    }
+]
