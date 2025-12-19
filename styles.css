@@ -35,9 +35,19 @@
             padding: 20px 5%;
             position: fixed;
             width: 100%; top: 0;
-            background: none;
-            backdrop-filter: blur(3px);
+
+            background-color: rgba(5, 5, 5, 0);
+            backdrop-filter: blur(0px);
+            /* border-bottom: 1px solid rgba(34, 34, 34, 0); */
             z-index: 1000;
+            transition: padding 0.3s ease;
+        }
+        nav.nav-scrolled {
+            background: rgba(5, 5, 5, 0.95); /* Hitam Pekat Transparan dikit */
+            backdrop-filter: blur(10px);      /* Efek blur nyala */
+            border-bottom: 1px solid #222;    /* Garis muncul */
+            padding: 20px 5%;                 /* Opsional: Navbar sedikit mengecil biar keren */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5); /* Ada bayangan */
         }
 
         .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
@@ -200,18 +210,56 @@
         
         .project-card {
             background: var(--card-bg); 
-            border: 1px solid #222; border-radius: 15px; overflow: hidden;
-            transition: transform 0.3s;
+            border: 1px solid #222;
+            border-radius: 15px;
+            overflow: visible !important;
+            transition: transform 0.3s, z-index 0s;
+            position: relative;
+            z-index: 1;
         }
-        .project-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .project-card:hover { 
+            transform: none;
+            border-color: var(--primary);
+            z-index: 999;
+        }
         
         .card-img { 
-            height: 200px; 
+            height: 200px;
+            padding: 0;
+            overflow: visible !important; 
             background: #1a1a1a;
-            display: flex; 
+            display: block; 
+            position: relative;
             align-items: center; 
             justify-content: center; 
             color: #555; 
+            z-index: 2;
+            border-radius: 12px 12px 0 0;
+        }
+        .card-img img {
+            width: 100%;       /* Lebar penuh */
+            height: 100%;      /* Tinggi penuh mengikuti parent (.card-img) */
+            object-fit: cover; /* MAGIC: Memotong gambar otomatis agar proporsional (crop) */
+            display: block;    /* Menghilangkan celah putih kecil di bawah gambar */
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-origin: center center;
+            border-radius: 12px 12px 0 0;
+            position: relative;
+        }
+
+        .project-card:hover .card-img img {
+            /* Perbesar gambar 1.6x lipat (sesuaikan angka ini sesuai selera) */
+            transform: scale(1.4) translateY(-10px); 
+            
+            /* Tambahkan bayangan agar terlihat melayang (3D effect) */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
+            
+            /* Opsional: Beri sedikit border radius agar manis */
+            border-radius: 12px; 
+            
+            /* Pastikan gambar berada di atas elemen teks kartu itu sendiri */
+
+            z-index: 1000; 
         }
 
         .card-content { padding: 25px; }
