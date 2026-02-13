@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="aurora-container"></div>
     <nav>
         <div class="logo">PORT<span>FOLIO.</span></div>
         <div class="hamburger" onclick="toggleMenu()">
@@ -74,6 +75,30 @@
         <div class="section-title"><span>Featured Projects</span></div>
         
         <div class="project-grid">
+            <div class="project-card">
+                <div class="card-img">
+                    <img src="img/katalis.png" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Katalis AI</div>
+                    <p class="card-desc">
+                        Membangun platform cerdas yang mengintegrasikan Google Gemini API untuk mengotomatisasi tugas administratif pendidik.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Gemini</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">FastAPI</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://katalis1.vercel.app"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/ReihanMursyidi/katalis-ai"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="project-card">
                 <div class="card-img">
                     <img src="img/parfum-preview.png" alt="">
@@ -189,27 +214,42 @@
     <script>
         // Efek Mengetik pada Hero Section
         const textElement = document.getElementById('typing-text');
-        const texts = ["Junior Backend Developer.", "AI Enthusiast.", "Problem Solver."];
+        const texts = ["Junior Backend Developer.", "AI Engineer.", "Problem Solver."];
         let count = 0;
         let index = 0;
         let currentText = "";
-        let letter = "";
+        let isDeleting = false;
 
         (function type() {
             if (count === texts.length) {
                 count = 0;
             }
             currentText = texts[count];
-            letter = currentText.slice(0, ++index);
 
-            textElement.textContent = letter;
-            if (letter.length === currentText.length) {
-                setTimeout(() => {
-                    index = 0;
-                    count++;
-                }, 2000); // Tunggu 2 detik sebelum ganti kata
+            if (isDeleting) {
+                currentText = currentText.slice(0, --index);
+            } else {
+                currentText = currentText.slice(0, ++index);
             }
-            setTimeout(type, 100);
+
+            textElement.textContent = currentText;
+            
+            let typeSpeed = 100;
+            if (isDeleting) {
+                typeSpeed = 50; // Lebih cepat saat menghapus
+            }
+
+            if (!isDeleting && currentText.length === texts[count].length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            }
+            else if (isDeleting && currentText.length === 0) {
+                isDeleting = false;
+                count++;
+                typeSpeed = 500;
+            }
+            setTimeout(type, typeSpeed);
+            
         })();
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -267,5 +307,6 @@
         });
     </script>
     <script src="chatbot.js"></script>
+    <script type="module" src="aurora.js"></script>
 </body>
 </html>
