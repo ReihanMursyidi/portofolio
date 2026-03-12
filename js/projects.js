@@ -1,5 +1,15 @@
 const projectsData = [
     {
+        title: "Student Radar",
+        image: "img/student-radar.png",
+        desc: "Aplikasi analisis prediktif berbasis web yang memadukan kekuatan LLM dan Machine Learning untuk mengidentifikasi potensi kendala akademik maupun perilaku pada siswa secara akurat.",
+        tags: ["HTML/CSS", "JavaScript", "FastAPI", "Python", "Gemini", "Scikit-learn", "Pandas", "SQLite"],
+        links: {
+            demo: "https://huggingface.co/spaces/reihanmursyidi/student-radar",
+            source: "https://github.com/ReihanMursyidi/student-radar"
+        }
+    },
+    {
         title: "Katalis AI",
         image: "img/katalis.png",
         desc: "Membangun platform cerdas yang mengintegrasikan Google Gemini API untuk mengotomatisasi tugas administratif pendidik.",
@@ -39,4 +49,5 @@ const projectsData = [
             source: "https://github.com/ReihanMursyidi/finance-bot"
         }
     }
+
 ];
