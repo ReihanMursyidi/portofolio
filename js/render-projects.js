@@ -10,8 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (project.links.demo) {
             linksHtml += `<a href="${project.links.demo}" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>`;
         }
+        
         if (project.links.source) {
-            linksHtml += `<a href="${project.links.source}" target="_blank"><i class="fab fa-github"></i> Source Code</a>`;
+            // Cek apakah source berupa Array (misal: punya 2 repo: Frontend & Backend)
+            if (Array.isArray(project.links.source)) {
+                linksHtml += `
+                    <a href="${project.links.source[0]}" target="_blank"><i class="fab fa-github"></i> Source (FE)</a>
+                    <a href="${project.links.source[1]}" target="_blank"><i class="fab fa-github"></i> Source (BE)</a>
+                `;
+            } else {
+                // Jika berupa String biasa (1 repo)
+                linksHtml += `<a href="${project.links.source}" target="_blank"><i class="fab fa-github"></i> Source Code</a>`;
+            }
         }
 
         const cardHtml = `
