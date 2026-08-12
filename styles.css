@@ -91,43 +91,23 @@
         .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: column; /* Mengubah arah menjadi vertikal */
             align-items: center; 
-            justify-content: center; 
-            text-align: center; /* Teks rata tengah */
-            padding: 120px 10% 50px;
-            background: radial-gradient(circle at center, #4d0b0b 0%, transparent 50%);
+            justify-content: space-between; 
+            padding: 120px 8% 50px; /* Padding sedikit dikurangi agar konten bisa melebar */
+            gap: 40px;
+            background: radial-gradient(circle at top left, #4d0b0b 0%, transparent 40%);
         }
 
         .hero-text {
-            max-width: 800px; /* Melebarkan batas teks agar tidak menumpuk ke bawah */
+            flex: 1.5; /* Teks mengambil porsi ruang lebih banyak */
+            max-width: 750px; /* Batas teks dilebarkan dari sebelumnya 600px */
         }
 
-        .hero h2 { 
-            color: var(--primary);
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.2; 
-            margin-bottom: 25px; 
-        }
-
-        .hero p { 
-            color: var(--text-sec); 
-            font-size: clamp(1rem, 2vw, 1.1rem);
-            margin-bottom: 40px; 
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .hero h2 { color: var(--primary); font-size: 1.2rem; margin-bottom: 15px; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 25px; }
+        .hero p { color: var(--text-sec); font-size: 1.1rem; margin-bottom: 35px; max-width: 90%; }
         
-        .cta-buttons { 
-            display: flex; 
-            gap: 20px;
-            justify-content: center; /* Tombol diletakkan di tengah */
-        }
+        .cta-buttons { display: flex; gap: 15px; }
 
         .btn {
             padding: 12px 30px; 
@@ -146,15 +126,17 @@
         .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
         .photo-profile {
-            margin-bottom: 30px;
+            flex: 1;
+            display: flex;
+            justify-content: flex-end; /* Mendorong foto ke kanan */
         }
 
         .photo-profile img {
-            width: clamp(180px, 20vw, 250px); /* Ukuran foto sedikit diperkecil agar elegan */
-            height: clamp(180px, 20vw, 250px);
+            width: clamp(200px, 25vw, 300px); /* Ukuran sedikit disesuaikan */
+            height: clamp(200px, 25vw, 300px);
             object-fit: cover; 
             border-radius: 50%; 
-            box-shadow: 0 0 30px rgba(247, 85, 85, 0.4); 
+            box-shadow: 0 0 40px rgba(247, 85, 85, 0.3); 
             animation: float 6s ease-in-out infinite;
         }
 
