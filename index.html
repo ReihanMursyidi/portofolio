@@ -91,6 +91,43 @@
             <a href="https://wa.me/6285776190814" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
     </section>
+
+    <!-- MODAL STUDI KASUS -->
+    <div id="case-study-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeCaseStudy()"><i class="fas fa-times"></i></button>
+            
+            <div class="modal-header">
+                <span class="modal-badge">Dedicated Case Study</span>
+                <h2 class="modal-title">Skripsi AI Generator</h2>
+                <p class="modal-subtitle">Mencegah Saturasi Topik dengan Vector Search & LLM</p>
+            </div>
+            
+            <div class="modal-body">
+                <div class="cs-section">
+                    <h3><i class="fas fa-exclamation-triangle text-primary"></i> 1. Latar Belakang Masalah</h3>
+                    <p>Banyak mahasiswa ilmu komputer kesulitan menemukan topik skripsi yang unik. Seringkali judul yang diajukan sudah terlalu usang atau memiliki tingkat kemiripan (saturasi) yang tinggi dengan penelitian sebelumnya di kampus, sehingga membuang waktu saat proses bimbingan.</p>
+                </div>
+
+                <div class="cs-section">
+                    <h3><i class="fas fa-lightbulb text-primary"></i> 2. Solusi & Arsitektur Sistem</h3>
+                    <p>Saya merancang platform berbasis AI untuk mengevaluasi ide mahasiswa secara *real-time*. Sistem ini tidak hanya memberikan saran, tetapi mengecek keunikan ide terhadap *database* judul yang sudah ada.</p>
+                    <ul class="cs-tech-list">
+                        <li><strong>Frontend (React.js):</strong> Membangun antarmuka interaktif agar mahasiswa dapat memasukkan variabel ide mereka dengan mudah.</li>
+                        <li><strong>Backend (FastAPI):</strong> Mengelola *routing* yang cepat dan asinkron untuk memproses *request* dari *client* ke model AI.</li>
+                        <li><strong>Vector Database (ChromaDB):</strong> Ini adalah inti dari sistem. Setiap judul skripsi yang ada diubah menjadi vektor (embedding). Saat mahasiswa mencari ide, sistem melakukan *similarity search* untuk mendeteksi seberapa jenuh topik tersebut.</li>
+                        <li><strong>Relational DB (MySQL):</strong> Menyimpan data terstruktur seperti profil pengguna dan riwayat pencarian.</li>
+                    </ul>
+                </div>
+
+                <div class="cs-section">
+                    <h3><i class="fas fa-rocket text-primary"></i> 3. Hasil & Dampak</h3>
+                    <p>Platform ini berhasil mengotomatisasi proses evaluasi awal sebuah judul penelitian. Dengan memadukan ketangguhan API relasional dan keakuratan pencarian vektor, sistem memberikan jaminan bahwa topik yang dihasilkan benar-benar segar dan *novel*.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- CHATBOT PART START -->
     <button class="chat-btn-float" onclick="toggleChat()" title="Chat dengan AI Saya">
         <i class="fas fa-comment-dots"></i>
@@ -213,44 +250,28 @@
             // navbar.style.borderBottom = `1px solid rgba(34, 34, 34, ${opacity})`;
             navbar.style.backdropFilter = `blur(${opacity * 10}px)`;
         });
+
+        // Fungsi untuk membuka dan menutup Modal
+        function openCaseStudy() {
+            document.getElementById('case-study-modal').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Mencegah background scroll
+        }
+
+        function closeCaseStudy() {
+            document.getElementById('case-study-modal').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Mengembalikan scroll
+        }
+
+        // Menutup modal jika user mengklik area luar (background gelap)
+        document.getElementById('case-study-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCaseStudy();
+            }
+        });
     </script>
     <script src="chatbot.js"></script>
     <script type="module" src="aurora.js"></script>
+
     
-    <!-- MODAL STUDI KASUS -->
-    <div id="case-study-modal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeCaseStudy()"><i class="fas fa-times"></i></button>
-            
-            <div class="modal-header">
-                <span class="modal-badge">Dedicated Case Study</span>
-                <h2 class="modal-title">Skripsi AI Generator</h2>
-                <p class="modal-subtitle">Mencegah Saturasi Topik dengan Vector Search & LLM</p>
-            </div>
-            
-            <div class="modal-body">
-                <div class="cs-section">
-                    <h3><i class="fas fa-exclamation-triangle text-primary"></i> 1. Latar Belakang Masalah</h3>
-                    <p>Banyak mahasiswa ilmu komputer kesulitan menemukan topik skripsi yang unik. Seringkali judul yang diajukan sudah terlalu usang atau memiliki tingkat kemiripan (saturasi) yang tinggi dengan penelitian sebelumnya di kampus, sehingga membuang waktu saat proses bimbingan.</p>
-                </div>
-
-                <div class="cs-section">
-                    <h3><i class="fas fa-lightbulb text-primary"></i> 2. Solusi & Arsitektur Sistem</h3>
-                    <p>Saya merancang platform berbasis AI untuk mengevaluasi ide mahasiswa secara *real-time*. Sistem ini tidak hanya memberikan saran, tetapi mengecek keunikan ide terhadap *database* judul yang sudah ada.</p>
-                    <ul class="cs-tech-list">
-                        <li><strong>Frontend (React.js):</strong> Membangun antarmuka interaktif agar mahasiswa dapat memasukkan variabel ide mereka dengan mudah.</li>
-                        <li><strong>Backend (FastAPI):</strong> Mengelola *routing* yang cepat dan asinkron untuk memproses *request* dari *client* ke model AI.</li>
-                        <li><strong>Vector Database (ChromaDB):</strong> Ini adalah inti dari sistem. Setiap judul skripsi yang ada diubah menjadi vektor (embedding). Saat mahasiswa mencari ide, sistem melakukan *similarity search* untuk mendeteksi seberapa jenuh topik tersebut.</li>
-                        <li><strong>Relational DB (MySQL):</strong> Menyimpan data terstruktur seperti profil pengguna dan riwayat pencarian.</li>
-                    </ul>
-                </div>
-
-                <div class="cs-section">
-                    <h3><i class="fas fa-rocket text-primary"></i> 3. Hasil & Dampak</h3>
-                    <p>Platform ini berhasil mengotomatisasi proses evaluasi awal sebuah judul penelitian. Dengan memadukan ketangguhan API relasional dan keakuratan pencarian vektor, sistem memberikan jaminan bahwa topik yang dihasilkan benar-benar segar dan *novel*.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
