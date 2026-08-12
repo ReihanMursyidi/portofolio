@@ -1,5 +1,16 @@
 const projectsData = [
     {
+        title: "Skripsi AI Generator",
+        image: "img/skripsi-ai.png", // Pastikan Anda menyiapkan gambar ini di folder img
+        desc: "Platform pintar buat mahasiswa tingkat akhir. Dibangun dengan React untuk UI yang clean, ditenagai FastAPI, dan menggunakan arsitektur Vector Search (ChromaDB) agar AI bisa menganalisis kejenuhan topik.",
+        tags: ["React", "FastAPI", "ChromaDB", "MySQL", "LLM"],
+        links: {
+            demo: "#", // Ganti dengan link asli jika ada
+            source: "https://github.com/ReihanMursyidi"
+        },
+        hasCaseStudy: true // <-- INI ADALAH KUNCI PEMICUNYA
+    },
+    {
         title: "Blackwood Barbershop",
         image: "img/barbershop.png",
         desc: "Platform digital komprehensif untuk barbershop yang mengintegrasikan Landing Page elegan dengan sistem reservasi (booking) cerdas berbasis time-blocking.",
