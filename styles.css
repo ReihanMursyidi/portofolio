@@ -91,35 +91,43 @@
         .hero {
             min-height: 100vh;
             display: flex;
+            flex-direction: column; /* Mengubah arah menjadi vertikal */
             align-items: center; 
-            justify-content: space-between; 
+            justify-content: center; 
+            text-align: center; /* Teks rata tengah */
             padding: 120px 10% 50px;
-            gap: 50px;
-            background: radial-gradient(circle at top left, #4d0b0b 0%, transparent 30%);
+            background: radial-gradient(circle at center, #4d0b0b 0%, transparent 50%);
         }
+
         .hero-text {
-            flex: 1; 
-            max-width: 600px; 
+            max-width: 800px; /* Melebarkan batas teks agar tidak menumpuk ke bawah */
         }
+
         .hero h2 { 
             color: var(--primary);
             font-size: clamp(1rem, 2vw, 1.2rem);
-            margin-bottom: 10px;
-            font-family:'Inter', sans-serif;
+            margin-bottom: 15px;
         }
+
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1; 
-            margin-bottom: 20px; 
+            line-height: 1.2; 
+            margin-bottom: 25px; 
         }
+
         .hero p { 
-            max-width: 95%;
             color: var(--text-sec); 
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            margin-bottom: 30px; 
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            margin-bottom: 40px; 
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .cta-buttons { display: flex; gap: 15px;}
+        .cta-buttons { 
+            display: flex; 
+            gap: 20px;
+            justify-content: center; /* Tombol diletakkan di tengah */
+        }
 
         .btn {
             padding: 12px 30px; 
@@ -138,17 +146,14 @@
         .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
         .photo-profile {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin-bottom: 30px;
         }
+
         .photo-profile img {
-            width: clamp(250px, 30vw, 350px); /* Ukuran foto responsif */
-            height: clamp(250px, 30vw, 350px);
-            object-fit: cover; /* Agar gambar tidak gepeng */
-            border-radius: 50%; /* Membuat foto jadi BULAT */
-            
+            width: clamp(180px, 20vw, 250px); /* Ukuran foto sedikit diperkecil agar elegan */
+            height: clamp(180px, 20vw, 250px);
+            object-fit: cover; 
+            border-radius: 50%; 
             box-shadow: 0 0 30px rgba(247, 85, 85, 0.4); 
             animation: float 6s ease-in-out infinite;
         }
